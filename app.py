@@ -40,11 +40,12 @@ class CarSchema(ma.Schema):
 car_schema = CarSchema()
 cars_schema = CarSchema(many=True)
 
-
-
-
 # Resources
-
+class CarListResource(Resource):
+    def get(self):
+        return "Hello World!"
+    
 
 
 # Routes
+api.add_resource(CarListResource, '/api/cars')
